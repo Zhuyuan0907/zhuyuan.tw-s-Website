@@ -1,0 +1,211 @@
+:root {
+  --bg: #060816;
+  --bg-soft: #0f1733;
+  --panel: rgba(12, 17, 42, 0.72);
+  --panel-border: rgba(120, 224, 255, 0.28);
+  --text: #f6f7fb;
+  --muted: #a8b0d0;
+  --cyan: #85f7ff;
+  --lime: #d8ff62;
+  --red: #ff5f87;
+  --glow: 0 0 30px rgba(133, 247, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 95, 135, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(133, 247, 255, 0.15), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(216, 255, 98, 0.12), transparent 30%),
+    linear-gradient(135deg, #04050d 0%, #091020 48%, #03060f 100%);
+  color: var(--text);
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(transparent 0 49%, rgba(255, 255, 255, 0.45) 50%, transparent 51%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100% 4px, 24px 24px;
+  mix-blend-mode: screen;
+}
+
+.page-shell {
+  position: relative;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.hero,
+.engineer-section {
+  position: relative;
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--glow);
+  overflow: hidden;
+}
+
+.hero::before,
+.engineer-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(133, 247, 255, 0.12), transparent 35%),
+    linear-gradient(180deg, transparent, rgba(255, 95, 135, 0.08));
+  pointer-events: none;
+}
+
+.hero {
+  padding: 80px 28px 72px;
+  border-radius: 28px;
+}
+
+.hero h1,
+.section-heading h2 {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  max-width: 9ch;
+  font-size: clamp(3rem, 8vw, 6.6rem);
+  line-height: 0.94;
+  text-shadow:
+    0 0 20px rgba(133, 247, 255, 0.32),
+    4px 4px 0 rgba(255, 95, 135, 0.28);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.4em;
+  color: var(--lime);
+}
+
+.hero-copy,
+.section-heading p {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.engineer-section {
+  margin-top: 28px;
+  padding: 32px 22px 26px;
+  border-radius: 24px;
+}
+
+.section-heading {
+  padding: 0 6px 22px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.section-heading code {
+  color: var(--cyan);
+  font-family: "Orbitron", sans-serif;
+}
+
+.engineer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.engineer-card {
+  position: relative;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(133, 247, 255, 0.03)),
+    rgba(7, 10, 24, 0.8);
+  min-height: 238px;
+}
+
+.engineer-card::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(133, 247, 255, 0.12);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(133, 247, 255, 0.4), transparent 30%),
+    linear-gradient(135deg, rgba(255, 95, 135, 0.22), rgba(133, 247, 255, 0.16));
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.08);
+}
+
+.engineer-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.engineer-tag {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding: 24px 0 56px;
+  }
+
+  .hero {
+    padding: 56px 18px 48px;
+    border-radius: 24px;
+  }
+
+  .engineer-section {
+    padding: 24px 14px 18px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.26em;
+  }
+}

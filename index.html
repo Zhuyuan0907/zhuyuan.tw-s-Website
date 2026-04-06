@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天才工程師的殞落</title>
+    <meta
+      name="description"
+      content="一個充滿 AI 合成感視覺風格的主題網站，展示殞落的天才工程師名單。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">SYNTHETIC LEGACY ARCHIVE</p>
+        <h1>天才工程師的殞落</h1>
+        <p class="hero-copy">
+          這不是低調的設計。這是一個刻意保留「AI 生成感」的視覺現場，像資料廢墟、
+          像神經網路殘影、像被模型重新拼接過的人才紀念碑。
+        </p>
+      </section>
+
+      <section class="engineer-section">
+        <div class="section-heading">
+          <p class="eyebrow">FALLEN PRODIGIES</p>
+          <h2>殞落名單</h2>
+          <p>
+            下方卡片已預留 gravatar 頭像與姓名欄位。你之後只需要改
+            <code>engineers</code> 陣列裡的資料。
+          </p>
+        </div>
+
+        <div id="engineer-grid" class="engineer-grid"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
