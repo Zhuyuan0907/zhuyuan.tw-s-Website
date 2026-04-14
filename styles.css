@@ -46,14 +46,14 @@ body.modal-open {
 
 .page-shell {
   position: relative;
-  width: min(1180px, calc(100% - 32px));
+  width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 72px 0 96px;
+  padding: 56px 0 80px;
 }
 
 .hero {
   position: relative;
-  padding: 40px 0 96px;
+  padding: 28px 0 72px;
 }
 
 .hero h1,
@@ -66,8 +66,8 @@ body.modal-open {
 
 .hero h1 {
   max-width: 9ch;
-  font-size: clamp(3rem, 8vw, 6.6rem);
-  line-height: 0.94;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 0.98;
   text-shadow:
     0 0 20px rgba(133, 247, 255, 0.32),
     4px 4px 0 rgba(255, 95, 135, 0.28);
@@ -94,11 +94,11 @@ body.modal-open {
 
 .hero-copy,
 .section-heading p {
-  max-width: 720px;
-  margin: 22px 0 0;
+  max-width: 640px;
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .engineer-section {
@@ -107,23 +107,23 @@ body.modal-open {
 }
 
 .section-heading {
-  padding: 0 0 28px;
+  padding: 0 0 20px;
 }
 
 .section-heading h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 
 .engineer-grid {
   display: grid;
-  gap: 28px;
+  gap: 20px;
 }
 
 .tier-card {
   position: relative;
-  padding: 28px;
+  padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border-radius: 22px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
     rgba(4, 8, 22, 0.72);
@@ -152,9 +152,9 @@ body.modal-open {
 .tier-header {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   align-items: end;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .tier-label {
@@ -166,27 +166,27 @@ body.modal-open {
 }
 
 .tier-header h3,
-.evidence-heading h4,
 .modal-copy h3 {
   margin: 0;
   font-family: "Orbitron", sans-serif;
 }
 
 .tier-header h3 {
-  font-size: clamp(1.25rem, 2.8vw, 2rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
 }
 
 .tier-description {
-  max-width: 420px;
+  max-width: 360px;
   margin: 0;
   color: var(--muted);
   line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .tier-members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 28px 22px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px 18px;
 }
 
 .engineer-card {
@@ -197,7 +197,7 @@ body.modal-open {
 .engineer-trigger {
   width: 100%;
   min-height: 100%;
-  padding: 12px 0 0;
+  padding: 6px 0 0;
   border: 0;
   background: transparent;
   color: inherit;
@@ -224,7 +224,7 @@ body.modal-open {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   border-radius: 999px;
   overflow: hidden;
   background:
@@ -244,8 +244,8 @@ body.modal-open {
 }
 
 .engineer-name {
-  margin: 0 0 6px;
-  font-size: 1rem;
+  margin: 0 0 4px;
+  font-size: 0.98rem;
   font-weight: 700;
   text-align: center;
 }
@@ -254,18 +254,18 @@ body.modal-open {
   margin: 0;
   text-align: center;
   color: var(--lime);
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .engineer-tag {
-  margin: 10px auto 0;
+  margin: 8px auto 0;
   max-width: 20ch;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   color: var(--muted);
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .engineer-modal {
@@ -296,11 +296,11 @@ body.modal-open {
 
 .modal-panel {
   position: relative;
-  width: min(1020px, 100%);
-  max-height: min(90vh, 920px);
+  width: min(760px, 100%);
+  max-height: min(84vh, 720px);
   overflow: auto;
-  padding: 28px;
-  border-radius: 28px;
+  padding: 22px;
+  border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     radial-gradient(circle at top right, rgba(255, 95, 135, 0.12), transparent 28%),
@@ -314,26 +314,26 @@ body.modal-open {
   margin-left: auto;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border: 0;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   cursor: pointer;
 }
 
 .modal-hero {
   display: grid;
-  grid-template-columns: minmax(220px, 280px) 1fr;
-  gap: 28px;
+  grid-template-columns: minmax(180px, 220px) 1fr;
+  gap: 22px;
   align-items: center;
 }
 
 .modal-avatar {
   aspect-ratio: 1;
-  border-radius: 28px;
+  border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(255, 95, 135, 0.24), rgba(133, 247, 255, 0.16));
   box-shadow:
@@ -341,8 +341,7 @@ body.modal-open {
     0 24px 50px rgba(0, 0, 0, 0.3);
 }
 
-.modal-avatar img,
-.evidence-card img {
+.modal-avatar img {
   width: 100%;
   height: 100%;
   display: block;
@@ -358,88 +357,38 @@ body.modal-open {
 }
 
 .modal-copy h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 .modal-title {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   color: var(--lime);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .modal-downfall {
-  margin: 18px 0 0;
+  margin: 14px 0 0;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: 0.96rem;
+  line-height: 1.75;
 }
 
 .modal-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .modal-stats span {
-  padding: 10px 14px;
+  padding: 8px 12px;
   border: 1px solid rgba(133, 247, 255, 0.22);
   border-radius: 999px;
   background: rgba(133, 247, 255, 0.06);
   color: var(--text);
-  font-size: 0.88rem;
-}
-
-.evidence-section {
-  margin-top: 34px;
-}
-
-.evidence-heading {
-  margin-bottom: 16px;
-}
-
-.evidence-heading .eyebrow {
-  margin-bottom: 10px;
-}
-
-.evidence-heading h4 {
-  font-size: clamp(1.3rem, 3vw, 2rem);
-}
-
-.evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.evidence-card {
-  margin: 0;
-  overflow: hidden;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.evidence-card img {
-  aspect-ratio: 16 / 10;
-}
-
-.evidence-card figcaption {
-  padding: 16px;
-}
-
-.evidence-card strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-.evidence-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
+  font-size: 0.84rem;
 }
 
 @media (max-width: 640px) {
@@ -458,8 +407,8 @@ body.modal-open {
 
   .tier-card,
   .modal-panel {
-    padding: 20px;
-    border-radius: 22px;
+    padding: 18px;
+    border-radius: 18px;
   }
 
   .tier-header,
@@ -472,7 +421,7 @@ body.modal-open {
   }
 
   .modal-close {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 }

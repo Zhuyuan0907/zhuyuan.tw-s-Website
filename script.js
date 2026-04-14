@@ -71,30 +71,6 @@ const grid = document.querySelector("#engineer-grid");
 const modal = document.querySelector("#engineer-modal");
 const modalBody = document.querySelector("#engineer-modal-body");
 
-const createEvidenceImage = (name, label, accent) => {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
-      <defs>
-        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#07111f" />
-          <stop offset="100%" stop-color="#170710" />
-        </linearGradient>
-      </defs>
-      <rect width="800" height="520" fill="url(#bg)" rx="28" />
-      <circle cx="668" cy="120" r="96" fill="${accent}" opacity="0.18" />
-      <circle cx="112" cy="400" r="144" fill="${accent}" opacity="0.1" />
-      <rect x="48" y="48" width="704" height="424" rx="22" fill="none" stroke="${accent}" stroke-opacity="0.5" />
-      <text x="64" y="110" fill="#d8ff62" font-family="Arial, Noto Sans TC, sans-serif" font-size="28" letter-spacing="6">FALL PROOF</text>
-      <text x="64" y="190" fill="#f6f7fb" font-family="Arial, Noto Sans TC, sans-serif" font-size="64" font-weight="700">${name}</text>
-      <text x="64" y="250" fill="#85f7ff" font-family="Arial, Noto Sans TC, sans-serif" font-size="32">${label}</text>
-      <text x="64" y="328" fill="#a8b0d0" font-family="Arial, Noto Sans TC, sans-serif" font-size="22">檔案已封存，足以證明其確實殞落。</text>
-      <text x="64" y="388" fill="#ff5f87" font-family="Arial, Noto Sans TC, sans-serif" font-size="20">status // irreversible</text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-};
-
 const engineerLookup = new Map();
 
 engineerTiers.forEach((tier) => {
@@ -104,23 +80,6 @@ engineerTiers.forEach((tier) => {
       ...member,
       id,
       tierName: tier.name,
-      evidence: [
-        {
-          title: "戰損快照",
-          caption: "事故現場已被封存成第一手圖資。",
-          image: createEvidenceImage(member.name, "戰損快照", "#85f7ff"),
-        },
-        {
-          title: "最後 commit",
-          caption: "紀錄顯示這次修改後，精神狀態急速下墜。",
-          image: createEvidenceImage(member.name, "最後 commit", "#ff5f87"),
-        },
-        {
-          title: "殞落認證",
-          caption: "經由專案群眾與系統日誌共同認證。",
-          image: createEvidenceImage(member.name, "殞落認證", "#d8ff62"),
-        },
-      ],
     });
   });
 });
@@ -171,27 +130,6 @@ const renderModal = (engineer) => `
       </div>
     </div>
   </div>
-  <section class="evidence-section">
-    <div class="evidence-heading">
-      <p class="eyebrow">EVIDENCE ARCHIVE</p>
-      <h4>殞落證據</h4>
-    </div>
-    <div class="evidence-grid">
-      ${engineer.evidence
-        .map(
-          (item) => `
-            <figure class="evidence-card">
-              <img src="${item.image}" alt="${engineer.name} 的${item.title}" />
-              <figcaption>
-                <strong>${item.title}</strong>
-                <p>${item.caption}</p>
-              </figcaption>
-            </figure>
-          `
-        )
-        .join("")}
-    </div>
-  </section>
 `;
 
 grid.innerHTML = engineerTiers.map(renderTier).join("");
