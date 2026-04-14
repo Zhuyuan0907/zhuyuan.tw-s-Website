@@ -5,27 +5,19 @@ const engineerTiers = [
     description: "曾是戰線前排，現在只剩 commit 傳說與戰損照片。",
     members: [
       {
-        name: "柴柴",
-        title: "Chief Collapse Officer",
-        epitaph: "把 side project 做成主宇宙，最後連睡眠排程都被 force push。",
-        downfall: "連續三週凌晨四點 merge，最後在 demo 前夕直接氣絕。",
+        name: "Ricky Lu",
+        title: "Token Bankruptcy Commander",
+        epitaph: "在 feature 還沒收尾前先把 token 用到負數，從淘寶幻夢一路跌進戒斷地獄。",
+        downfall:
+          "先是怒吼『幹，用完了，用到變負的』，接著發現還有三個 feature 沒搞定；被淘寶模型坑了 100 人民幣後，嘴上說再買是狗，下一秒又開始追問號池跟 token，最終在反覆戒斷與求補給之間正式隕落。",
         gravatar:
-          "https://gravatar.com/avatar/cacb91a081291126489ba6b0e98662c698188ecce6391007b171461b21ef4241?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
-        stats: ["PR 破防次數 37", "咖啡因濃度 SSS", "最後上線時間 04:44"],
-      },
-      {
-        name: "康喔",
-        title: "Frontend Doombringer",
-        epitaph: "動畫永遠比需求先到位，然後人先倒。",
-        downfall: "試圖在一晚內補完所有互動細節，最後跟 CSS 一起蒸發。",
-        gravatar:
-          "https://gravatar.com/avatar/08b25778f9a9ca3f2591b4e859be426dbd075608d763daf4fdd244d48eb26f13?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
-        stats: ["Hover 特效 128 個", "最後呼吸伴隨 keyframes", "Bug 回報已讀不回 12 小時"],
+          "https://gravatar.com/avatar/9a4d30231b7e098d33360390c317ed497641f389d797b198d84071de6728bd63?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
+        stats: ["Token 餘額 -∞", "未完成 feature 3", "淘寶受害金額 100R"],
       },
     ],
   },
   {
-    name: "重度使用者",
+    name: "重度Token消耗者",
     code: "tier-a",
     description: "作戰能力穩定，但在長期消耗下仍舊逃不過宿命。",
     members: [
@@ -47,10 +39,28 @@ const engineerTiers = [
           "https://gravatar.com/avatar/014f25869988e740766b2247d49013b50118675df2d0918f9f4f86e565732a3b?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
         stats: ["Migration 次數 52", "Log 錯誤行數破萬", "Rollback 心率持續飆升"],
       },
+            {
+        name: "康喔",
+        title: "Frontend Doombringer",
+        epitaph: "動畫永遠比需求先到位，然後人先倒。",
+        downfall: "試圖在一晚內補完所有互動細節，最後跟 CSS 一起蒸發。",
+        gravatar:
+          "https://gravatar.com/avatar/08b25778f9a9ca3f2591b4e859be426dbd075608d763daf4fdd244d48eb26f13?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
+        stats: ["Hover 特效 128 個", "最後呼吸伴隨 keyframes", "Bug 回報已讀不回 12 小時"],
+      },
+            {
+        name: "柴柴",
+        title: "Chief Collapse Officer",
+        epitaph: "把 side project 做成主宇宙，最後連睡眠排程都被 force push。",
+        downfall: "連續三週凌晨四點 merge，最後在 demo 前夕直接氣絕。",
+        gravatar:
+          "https://gravatar.com/avatar/cacb91a081291126489ba6b0e98662c698188ecce6391007b171461b21ef4241?s=512&d=https://sitcon.org/2022/imgs/deafult_avatar.jpg&r=g",
+        stats: ["PR 破防次數 37", "咖啡因濃度 SSS", "最後上線時間 04:44"],
+      }
     ],
   },
   {
-    name: "",
+    name: "輕度克勞德使用者",
     code: "tier-b",
     description: "還來不及逃，已經被專案召喚進殞落名冊。",
     members: [
