@@ -31,11 +31,32 @@
         <div class="section-heading">
           <p class="eyebrow">FALLEN PRODIGIES</p>
           <h2>殞落名單</h2>
+          <p>依照殞落程度分級，點開頭像可以查看更多戰損紀錄與現場證據。</p>
         </div>
 
         <div id="engineer-grid" class="engineer-grid"></div>
       </section>
     </main>
+
+    <aside
+      id="engineer-modal"
+      class="engineer-modal"
+      aria-hidden="true"
+      aria-labelledby="engineer-modal-name"
+    >
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel" role="dialog" aria-modal="true">
+        <button
+          type="button"
+          class="modal-close"
+          data-close-modal
+          aria-label="關閉詳細資訊"
+        >
+          ×
+        </button>
+        <div id="engineer-modal-body"></div>
+      </div>
+    </aside>
 
     <script src="./script.js"></script>
   </body>

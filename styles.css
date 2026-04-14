@@ -28,6 +28,10 @@ body {
   overflow-x: hidden;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .noise {
   position: fixed;
   inset: 0;
@@ -112,14 +116,108 @@ body {
 
 .engineer-grid {
   display: grid;
+  gap: 28px;
+}
+
+.tier-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+    rgba(4, 8, 22, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.tier-s {
+  box-shadow:
+    inset 0 0 0 1px rgba(216, 255, 98, 0.18),
+    0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.tier-a {
+  box-shadow:
+    inset 0 0 0 1px rgba(133, 247, 255, 0.14),
+    0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.tier-b {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 95, 135, 0.16),
+    0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.tier-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.tier-label {
+  margin: 0 0 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  color: var(--cyan);
+}
+
+.tier-header h3,
+.evidence-heading h4,
+.modal-copy h3 {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+}
+
+.tier-header h3 {
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
+}
+
+.tier-description {
+  max-width: 420px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.tier-members {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 28px 22px;
 }
 
 .engineer-card {
   position: relative;
-  min-height: 238px;
-  padding-top: 12px;
+  min-height: 100%;
+}
+
+.engineer-trigger {
+  width: 100%;
+  min-height: 100%;
+  padding: 12px 0 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.engineer-trigger:hover,
+.engineer-trigger:focus-visible {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+}
+
+.engineer-trigger:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 8px;
+  border-radius: 24px;
 }
 
 .avatar-wrap {
@@ -146,19 +244,202 @@ body {
 }
 
 .engineer-name {
-  margin: 0;
+  margin: 0 0 6px;
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
 }
 
-.engineer-tag {
-  margin: 6px 0 0;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  color: var(--cyan);
-  text-transform: uppercase;
+.engineer-rank {
+  margin: 0;
   text-align: center;
+  color: var(--lime);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.engineer-tag {
+  margin: 10px auto 0;
+  max-width: 20ch;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.engineer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.engineer-modal[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 4, 12, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.modal-panel {
+  position: relative;
+  width: min(1020px, 100%);
+  max-height: min(90vh, 920px);
+  overflow: auto;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(255, 95, 135, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(9, 16, 32, 0.96), rgba(5, 9, 20, 0.98));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.modal-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.modal-avatar {
+  aspect-ratio: 1;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 95, 135, 0.24), rgba(133, 247, 255, 0.16));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-avatar img,
+.evidence-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.modal-tier {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.modal-copy h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.modal-title {
+  margin: 12px 0 0;
+  color: var(--lime);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.modal-downfall {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.modal-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.modal-stats span {
+  padding: 10px 14px;
+  border: 1px solid rgba(133, 247, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(133, 247, 255, 0.06);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.evidence-section {
+  margin-top: 34px;
+}
+
+.evidence-heading {
+  margin-bottom: 16px;
+}
+
+.evidence-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.evidence-heading h4 {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.evidence-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.evidence-card img {
+  aspect-ratio: 16 / 10;
+}
+
+.evidence-card figcaption {
+  padding: 16px;
+}
+
+.evidence-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.evidence-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 @media (max-width: 640px) {
@@ -173,5 +454,25 @@ body {
 
   .eyebrow {
     letter-spacing: 0.26em;
+  }
+
+  .tier-card,
+  .modal-panel {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .tier-header,
+  .modal-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-header {
+    align-items: start;
+  }
+
+  .modal-close {
+    width: 40px;
+    height: 40px;
   }
 }
