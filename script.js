@@ -1,6 +1,6 @@
 const engineerTiers = [
   {
-    name: "總召集人",
+    name: "Vibe Code 總召集人",
     code: "tier-s",
     description: "曾是戰線前排，現在只剩 commit 傳說與戰損照片。",
     members: [
@@ -103,7 +103,7 @@ const renderTier = (tier) => `
       </div>
       <p class="tier-description">${tier.description}</p>
     </div>
-    <div class="tier-members">
+    <div class="tier-members ${tier.members.length === 1 ? "is-single" : ""}">
       ${tier.members
         .map((member, index) => {
           const id = `${tier.code}-${index}`;

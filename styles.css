@@ -184,14 +184,22 @@ body.modal-open {
 }
 
 .tier-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px 18px;
+  align-items: flex-start;
 }
 
 .engineer-card {
   position: relative;
+  width: min(100%, 180px);
+  flex: 0 0 180px;
   min-height: 100%;
+}
+
+.tier-members.is-single .engineer-card {
+  width: min(100%, 170px);
+  flex-basis: 170px;
 }
 
 .engineer-trigger {
@@ -414,6 +422,16 @@ body.modal-open {
   .tier-header,
   .modal-hero {
     grid-template-columns: 1fr;
+  }
+
+  .tier-members {
+    gap: 16px 14px;
+  }
+
+  .engineer-card,
+  .tier-members.is-single .engineer-card {
+    width: min(100%, 148px);
+    flex-basis: 148px;
   }
 
   .tier-header {
